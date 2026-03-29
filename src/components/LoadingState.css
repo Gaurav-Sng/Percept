@@ -1,0 +1,44 @@
+/* src/components/LoadingState.css */
+.loading-state {
+  text-align: center;
+  padding: 60px 20px;
+  animation: fadeIn 0.4s ease both;
+}
+
+.loading-orb-ring {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  animation: spin 1s linear infinite;
+  margin: 0 auto 24px;
+  display: grid;
+  place-items: center;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-orb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loading-msg {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+  animation: slideIn 0.4s ease both;
+}
+
+.loading-sub {
+  font-size: 13px;
+  color: var(--ink-muted);
+  font-weight: 300;
+}

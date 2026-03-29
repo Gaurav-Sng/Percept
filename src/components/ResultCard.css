@@ -1,0 +1,85 @@
+/* src/components/ResultCard.css */
+.result-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  animation: revealResult 0.55s ease both;
+  box-shadow: var(--shadow);
+}
+
+/* Themed headers */
+.result-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+}
+
+.result-card-icon { font-size: 17px; }
+.result-card-label { font-size: 13px; font-weight: 600; }
+
+/* Orange — summary */
+.result-card--orange .result-card-head {
+  background: linear-gradient(135deg, #FFF8F4, #FFF0E6);
+  color: #8B3808;
+  border-bottom: 1px solid #FFD9C0;
+}
+
+/* Blue — impact */
+.result-card--blue .result-card-head {
+  background: linear-gradient(135deg, #EFF5FF, #E0EEFF);
+  color: #1A3F80;
+  border-bottom: 1px solid #C0D5FF;
+}
+
+/* Green — implications */
+.result-card--green .result-card-head {
+  background: linear-gradient(135deg, #F0FBF5, #E2F5EB);
+  color: #1A4D3C;
+  border-bottom: 1px solid #B6E4CE;
+}
+
+/* Purple — suggestions */
+.result-card--purple .result-card-head {
+  background: linear-gradient(135deg, #FBF0FF, #F5E6FF);
+  color: #5C1A7C;
+  border-bottom: 1px solid #DDB8FF;
+}
+
+/* Body */
+.result-card-body {
+  background: var(--surface);
+  padding: 18px 20px;
+}
+
+.result-para {
+  font-size: 14px;
+  line-height: 1.78;
+  color: var(--ink);
+}
+
+.result-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.result-list-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.result-arrow {
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}

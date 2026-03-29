@@ -1,0 +1,121 @@
+/* src/components/PersonaSelector.css */
+.persona-card-wrapper { animation-delay: 0.1s; }
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.persona-tile {
+  position: relative;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 10px 14px;
+  cursor: pointer;
+  background: var(--surface-2);
+  text-align: center;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+
+.persona-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.persona-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--border-hover);
+}
+
+.persona-tile.selected {
+  border-color: var(--accent);
+  background: var(--accent-pale);
+}
+
+.persona-tile.selected::before { opacity: 0.05; }
+
+.persona-icon {
+  font-size: 28px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.persona-tile:hover .persona-icon,
+.persona-tile.selected .persona-icon {
+  transform: scale(1.12);
+}
+
+.persona-name {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.persona-desc {
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+.persona-check {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-pale);
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+}
+
+/* Custom context */
+.custom-ctx { display: flex; flex-direction: column; gap: 7px; }
+
+.custom-ctx-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-muted);
+}
+
+.custom-ctx-label span { font-weight: 400; }
+
+.custom-ctx-input {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--ink);
+  background: var(--surface-2);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 15px;
+  outline: none;
+  transition: var(--transition);
+}
+
+.custom-ctx-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  background: var(--surface);
+}
+
+@media (max-width: 540px) {
+  .persona-grid { grid-template-columns: repeat(2, 1fr); }
+}
